@@ -18,10 +18,12 @@ Analysis.R - R code that creates first order linear regression models predicitin
 
 Plotting All Games.R - contains all R code needed to make all graphics and tables for this project
 
-Pioneer Project Paper RMD.rmd - R Markdown File used to create the pdf Billy Fryer Pioneer Project Paper
+Pioneer Project Paper RMD.rmd - R Markdown File used to create the pdf Pioneer Project Paper
 
 Pioneer Project Paper.pdf - PDF file that contains the output of Pioneer Project Paper RMD - a complete writeup of the project and analysis
 
 Pioneer League Project.Rproj - R Project File used for this study
 
 UCSAS Slides.ppt - Powerpoint used for presenting at the UCONN Sports Analytics Sympoisum
+
+Last Updated on 9/25/2021
