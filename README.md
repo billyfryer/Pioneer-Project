@@ -23,3 +23,5 @@ Pioneer Project Paper RMD.rmd - R Markdown File used to create the pdf Billy Fry
 Pioneer Project Paper.pdf - PDF file that contains the output of Pioneer Project Paper RMD - a complete writeup of the project and analysis
 
 Pioneer League Project.Rproj - R Project File used for this study
+
+UCSAS Slides.ppt - Powerpoint used for presenting at the UCONN Sports Analytics Sympoisum
