@@ -25,7 +25,7 @@ light_purple <- "#CBC3E3"
 ggplot(pioneer_data, 
        aes(x = scaled_min,
            fill = extras_rule)) +
-  geom_density(alpha = 0.250) +
+  geom_density(alpha = 0.50) +
   # 3 Hours line and label
   geom_vline(xintercept = 180,
              color = blue, # Blue
@@ -58,6 +58,7 @@ ggplot(pioneer_data,
                                "Normal Extra Innings" = "blue"
   )) +
   scale_y_continuous(labels = scales::percent_format()) +
+  theme_dark() +
   theme(plot.title = element_text(hjust = 0.5, 
                                   size = 16),
         plot.subtitle = element_text(hjust = 0.5,
@@ -66,9 +67,9 @@ ggplot(pioneer_data,
         legend.text = element_text(hjust = 0.5),
         legend.title = element_text(hjust = 0.5))
 
-# ggsave("Extra Inning Rules Distribution All Games.png",
-#        width = 6.5,
-#        height = 5)
+ggsave("Extra Inning Rules Distribution All Games.png",
+       width = 6.5,
+       height = 5)
 
 
 ######################### Faceting Violin Plot #########################
