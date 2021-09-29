@@ -51,3 +51,21 @@ pioneer_summary <- pioneer_data %>%
   ungroup() %>% 
   arrange(extras_rule, extras)
 
+# Normal Minutes for games withwith only Nine Innings 
+pioneer_summary2 <- pioneer_data %>% 
+  filter(scheduledInnings == 9) %>% 
+  group_by(extras_rule, extras) %>% 
+  summarize(
+    mu_9 = mean(time_min, na.rm = TRUE),
+    sd_9 = sd(time_min, na.rm = TRUE),
+    count_9 = n()
+  ) %>% 
+  ungroup() %>% 
+  arrange(extras_rule, extras)
+
+# Merge pioneer_summary and pioneer_summary2
+pioneer_summary_complete <- merge(pioneer_summary,
+                                  pioneer_summary2,
+                                  by = c("extras_rule", "extras"),
+                                  )
+

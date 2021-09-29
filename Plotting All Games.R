@@ -89,8 +89,8 @@ ggplot(data = pioneer_data,
   facet_wrap(~extras_rule,
              nrow = 1) +
   theme_dark() +
-  scale_fill_manual(values = c("TRUE" = light_purple,
-                               "FALSE" = light_green),
+  scale_fill_manual(values = c("TRUE" = light_green,
+                               "FALSE" = light_purple),
                     labels = c("Extra Innings Needed",
                                "Game Ended in Regulation")) +
   labs(title = "Pioneer League Game Length Distributions",

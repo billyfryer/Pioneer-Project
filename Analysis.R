@@ -4,10 +4,6 @@ library(gt)
 library(emoji)
 library(webshot)
 
-# entropy_function <- function(pvec,C){
-#   -1*sum((pvec+.00001)*log(pvec+.00001))/log(C)
-# }
-
 #' Extra Innings Rate is almost half of what it was
 #' under affiliated ball
 
@@ -33,7 +29,7 @@ pioneer_data %>%
   tab_header(
     title = md("**Extra Innings Rates in the Pioneer League**"),
     subtitle = "Data from MLB API and Pointstreak") %>% 
-  tab_source_note(source_note = "Games from 2016 - 2021\nExcluding 9/11/2021 Boise vs Ogden Playoff Game Where Extra Innings Were Played Without the Knockout Round in Effect Due to Playoff Rules")
+  tab_source_note(source_note = "Games from 2016 - 2021\nExcluding 9/11/2021 Boise vs Ogden Playoff Game")
 # %>%
 #   gtsave("Extra Innings Rate.png")
 
@@ -47,8 +43,7 @@ x_emoji <- emoji::emojis %>%
   filter(name == "cross mark button") %>% 
   pull(emoji)
 
-pioneer_summary %>% 
-  select(extras_rule:count_scaled) %>% 
+pioneer_summary_complete %>% 
   mutate(extras = case_when(extras ~ checkmark,
                            !extras ~ x_emoji)) %>% 
   gt() %>% 
@@ -57,13 +52,16 @@ pioneer_summary %>%
   ) %>% 
   cols_label(extras_rule = "Extras Rule",
              extras = "Extras Occured?",
-             mu_scaled = "Mean Game Minutes*",
-             sd_scaled = "SD Game Minutes*",
-             count_scaled = "Number of Games")  %>% 
+             mu_scaled = "Mean Game Scaled Minutes",
+             sd_scaled = "SD Game Scaled Minutes",
+             count_scaled = "Number of Games",
+             mu_9 = "Mean Game Minutes for 9 Inning Games",
+             sd_9 = "SD Game Minutes for 9 Inning Games",
+             count_9 = "Number of 9 Inning Games")  %>% 
   tab_header(
     title = md("**Game Lengths in the Pioneer League**"),
     subtitle = "Viz by Billy Fryer (@_b4billy_) | Data from MLB API and Pointstreak") %>% 
-  tab_source_note(source_note = "* For Games Scheduled to be < 9 Innings, Minutes Scaled by 9 / Number of Innings Scheduled")
+  tab_source_note(source_note = "* For Games Scheduled to be < 9 Innings, Minutes Scaled = 9 / Number of Innings Scheduled * Actual Game Length in Minutes") 
 # %>% 
 #   gtsave("Mean and SD Chart.png")
 
@@ -114,6 +112,8 @@ data.frame(Rule = c("Normal Extra Innings", "Runner On Second","Knockout Round")
              Intercept = "Intercept",
              Extras = "Extras Slope",
              ANOVAP = "ANOVA p-value") %>% 
-  gtsave("Coefficient Matrix.png")
+  tab_source_note(source_note = "Light blue color represents statistical significance at the alpha = 0.05 significance level") 
+# %>% 
+#   gtsave("Coefficient Matrix.png")
   
 
