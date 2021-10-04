@@ -26,4 +26,4 @@ Pioneer League Project.Rproj - R Project File used for this study
 
 UCSAS Slides.ppt - Powerpoint used for presenting at the UCONN Sports Analytics Sympoisum
 
-Last Updated on 9/25/2021
+Last Updated on 10/4/2021
