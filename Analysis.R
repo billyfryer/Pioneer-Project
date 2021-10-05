@@ -60,9 +60,9 @@ pioneer_summary_complete %>%
              count_9 = "Number of 9 Inning Games")  %>% 
   tab_header(
     title = md("**Game Lengths in the Pioneer League**"),
-    subtitle = "Viz by Billy Fryer (@_b4billy_) | Data from MLB API and Pointstreak") %>% 
+    subtitle = "Data from MLB API and Pointstreak") %>% 
   tab_source_note(source_note = "* For Games Scheduled to be < 9 Innings, Minutes Scaled = 9 / Number of Innings Scheduled * Actual Game Length in Minutes") 
-# %>% 
+# %>%
 #   gtsave("Mean and SD Chart.png")
 
 #################### ANOVA Analysis  ####################
@@ -112,7 +112,7 @@ data.frame(Rule = c("Normal Extra Innings", "Runner On Second","Knockout Round")
              Intercept = "Intercept",
              Extras = "Extras Slope",
              ANOVAP = "ANOVA p-value") %>% 
-  tab_source_note(source_note = "Light blue color represents statistical significance at the alpha = 0.05 significance level") 
+  tab_source_note(source_note = "Light blue color represents no statistical significance at the alpha = 0.05 significance level") 
 # %>% 
 #   gtsave("Coefficient Matrix.png")
   
