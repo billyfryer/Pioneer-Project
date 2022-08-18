@@ -22,8 +22,8 @@ the game after a regulation 9 innings was played. Using box score data from the 
 this paper models the total amount of game time of games that went into extra innings compared to the
 game time of games that did not go into extra innings, broken up by the rule in place for extra innings.
 
-**Abstract:**
-This project won Honorable Mention at the 2021 UConn Sports Analytics Symposium.
+**Awards and Presentations:**
+This project won Honorable Mention at the 2021 UConn Sports Analytics Symposium Poster Session and was also presented at the NC State Sidewalk Symposium.
 
 **File Explanation:**
 
