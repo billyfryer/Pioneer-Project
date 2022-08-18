@@ -22,6 +22,9 @@ the game after a regulation 9 innings was played. Using box score data from the 
 this paper models the total amount of game time of games that went into extra innings compared to the
 game time of games that did not go into extra innings, broken up by the rule in place for extra innings.
 
+**Abstract:**
+This project won Honorable Mention at the 2021 UConn Sports Analytics Symposium.
+
 **File Explanation:**
 
 2019 and Prior Data.R - An adaptation of R code from Bill Petti's baseballr package that pulls relevant data from the MLB API in order for the 2016-2019 seasons.
