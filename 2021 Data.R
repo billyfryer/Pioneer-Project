@@ -15,13 +15,8 @@ tictoc::tic()
 get_gameids_2021 <- function(seasonid = 33073) {
   url <- paste0("http://baseball.pointstreak.com/textstats/menu_games.html?seasonid=", seasonid)
   
-  #' All of these functions are from the rvest package
-  #' I'm not really sure how they work, or how I got them to work,
-  #' but they work. To see the html code for a website, press:
-  #' ctrl + shift + i.
-  #' 
-  #' I kinda looked for familiar things and it worked,
-  #' then found the html_attr("href") on stack overflow
+  #' Scrape the HTML code using the rvest package
+  
   part1 <- url %>% 
     read_html() %>% 
     html_elements("td") %>% 
